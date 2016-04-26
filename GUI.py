@@ -1,7 +1,7 @@
 from Tkinter import *
 
 class GUI(Tk):
-    def __init__(self):
+    def __init__(self, say, speechInput):
 
         Tk.__init__(self)
 
@@ -23,9 +23,13 @@ class GUI(Tk):
         self.inputFrame.pack(fill=X)
         self.inputBox = Entry(self.inputFrame,);
         self.inputBox.pack(fill=X, expand=1, side = LEFT)
-        self.inputButton = Button(self.inputFrame,width = 10, text = "say");
+        self.inputButton = Button(self.inputFrame,width = 5, text = "send");
+        self.speakButton = Button(self.inputFrame,width = 5, text = "speak");
         self.inputButton.pack(side = RIGHT)
+        self.speakButton.pack(side = RIGHT)
         self.espeakprocess = None;
+        self.say = say
 
-root = GUI();
-root.mainloop();
+if __name__ == "__main__":
+    root = GUI(None, None);
+    root.mainloop();
