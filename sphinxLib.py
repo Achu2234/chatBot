@@ -56,3 +56,10 @@ def RecordAndDecode(Seconds = 10):
     wavfile = fn
     recognised = decodeSpeech(hmdir,lmd,dictd,wavfile)
     return recognised
+
+if __name__ == "__main__":
+    for x in range(10):
+        recognised = RecordAndDecode()
+        print recognised
+        cm = 'espeak.exe "'+recognised+'"'
+        os.system(cm)
