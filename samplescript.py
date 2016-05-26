@@ -1,11 +1,11 @@
 #C:\Users\TWBRITT\AppData\Local\Programs\Python\Python35-32
 import urllib
 import json
-
+import wikipedia
 import urllib.request
 import request1
 import webbrowser
-from duckduckgo import duckduckgo
+#from duckduckgo import duckduckgo
 from PyDictionary import PyDictionary
 #duck=duckduckgo();
 parser='htmlparser'
@@ -21,7 +21,8 @@ dictionary=PyDictionary()
 
 #soup=dictionary.PyDictionary(html, 'htmlparser')
 #print (dictionary.meaning("indentation"))
-
+ny=wikipedia.page("New York")
+print(wikipedia.summary("Facebook", sentences=1).encode("UTF-8"))
 print ("Hello, I am Ivory. What is your name?")
 inputer=input("A: ")
 print(ivory_file[ivory_for_for[1]])
