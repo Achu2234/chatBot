@@ -10,10 +10,11 @@ from PyDictionary import PyDictionary
 #duck=duckduckgo();
 parser='htmlparser'
 definedstringjoin=""
+definedwikijoin=""
 name=""
 askingforname=True
-definitionvalues=["what is a ", "define ", "what is an "]
-browsersearchvalues=["search for"]
+definitionvalues=["define "]
+wikipediasearchvalues=["search for ", "wiki ", "wikepedia ", "what is an ", "what is a ", "what is "]
 ivory_filesearch_key=["What is your","what is your favorite", "what is your all-time", "what is your favorite", ""]
 ivory_file={'name': 'Ivory', 'age': '15', 'color': 'orange', 'eye color': 'blue', 'movie': 'The Internship', 'book': 'Harry Potter Book Six', 'band': 'Casting Crowns', 'Song': 'Die a Happy Man', 'food': 'fried rice'}
 ivory_for_for=['name', 'age', 'color', 'eye color', 'movie', 'book', 'band', 'song', 'food']
@@ -28,16 +29,35 @@ inputer=input("A: ")
 print(ivory_file[ivory_for_for[1]])
 def run():
 	global ivory_file
+	global definedwikijoin
 	global askingforname
 	global ivory_for_for
 	global definedstringjoin
 	global inputer
 	global ivory_file
+	global wikipediasearchvalues
 	global ivory_filesearch_key
 	if askingforname==True:
 		name=inputer
 		askingforname=False
 #for num in range(len(input)):
+	for wikisearcher in range(len(wikipediasearchvalues)):
+		if inputer.find(wikipediasearchvalues[wikisearcher])>-1:
+			wikifind=inputer.find(wikipediasearchvalues[wikisearcher])+len(wikipediasearchvalues[wikisearcher])
+			for wikisort in range(wikifind, len(inputer)):
+				definedwikijoin=definedwikijoin+inputer[wikisort]
+			#print(definedstringjoin)
+				if len(definedwikijoin)==len(inputer)-wikifind:
+					print("trying to run")
+					try:
+						print(wikipedia.summary(definedwikijoin, sentences=1).encode("UTF-8"))
+						
+					except (wikipedia.exceptions.PageError, wikipedia.exceptions.DisambiguationError):
+						print("We could not find the value with wikipedia")
+					
+						#wikifind=0
+						definedwikijoin=""
+						
 	for fileb in range (len(ivory_filesearch_key)):
 		for c in range (len(ivory_for_for)):
 			if inputer.find(ivory_filesearch_key[fileb]+ivory_for_for[c])>-1:
