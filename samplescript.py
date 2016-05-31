@@ -22,11 +22,9 @@ dictionary=PyDictionary()
 
 #soup=dictionary.PyDictionary(html, 'htmlparser')
 #print (dictionary.meaning("indentation"))
-ny=wikipedia.page("New York")
-print(wikipedia.summary("Facebook", sentences=1).encode("UTF-8"))
 print ("Hello, I am Ivory. What is your name?")
 inputer=input("A: ")
-print(ivory_file[ivory_for_for[1]])
+
 def run():
 	global ivory_file
 	global definedwikijoin
@@ -37,54 +35,56 @@ def run():
 	global ivory_file
 	global wikipediasearchvalues
 	global ivory_filesearch_key
-	if askingforname==True:
-		name=inputer
-		askingforname=False
+#	if askingforname==True:
+#		name=inputer
+#		askingforname=False
 #for num in range(len(input)):
-	for wikisearcher in range(len(wikipediasearchvalues)):
-		if inputer.find(wikipediasearchvalues[wikisearcher])>-1:
-			wikifind=inputer.find(wikipediasearchvalues[wikisearcher])+len(wikipediasearchvalues[wikisearcher])
-			for wikisort in range(wikifind, len(inputer)):
-				definedwikijoin=definedwikijoin+inputer[wikisort]
+	if askingforname==False:
+		for wikisearcher in range(len(wikipediasearchvalues)):
+			if inputer.find(wikipediasearchvalues[wikisearcher])>-1:
+				wikifind=inputer.find(wikipediasearchvalues[wikisearcher])+len(wikipediasearchvalues[wikisearcher])
+				for wikisort in range(wikifind, len(inputer)):
+					definedwikijoin=definedwikijoin+inputer[wikisort]
+				
 			#print(definedstringjoin)
-				if len(definedwikijoin)==len(inputer)-wikifind:
-					print("trying to run")
-					try:
-						print(wikipedia.summary(definedwikijoin, sentences=1).encode("UTF-8"))
-						
-					except (wikipedia.exceptions.PageError, wikipedia.exceptions.DisambiguationError):
-						print("We could not find the value with wikipedia")
+				#if len(definedwikijoin)==len(inputer)-wikifind:
+					if len(definedwikijoin)+wikifind==len(inputer):
+						try:
+							print(str(wikipedia.summary(definedwikijoin, sentences=1).encode("UTF-8")) + ", " + name)
+							print(askingforname)
+							definedwikijoin=""
+						except (wikipedia.exceptions.PageError, wikipedia.exceptions.DisambiguationError):
+							print("We could not find the value with wikipedia" + ", " + name)
 					
 						#wikifind=0
-						definedwikijoin=""
+							definedwikijoin=""
 						
-	for fileb in range (len(ivory_filesearch_key)):
-		for c in range (len(ivory_for_for)):
-			if inputer.find(ivory_filesearch_key[fileb]+ivory_for_for[c])>-1:
-				print("My favorite " + ivory_for_for[c] + " is " + ivory_file[ivory_for_for[c]])
-				break
-	for num in range (len(definitionvalues)):
-		if inputer.find(definitionvalues[num])>-1:
-			abc=inputer.find(definitionvalues[num])+len(definitionvalues[num])
-			for fnum in range(abc, len(inputer)):
-				definedstringjoin=definedstringjoin+inputer[fnum]
+		for fileb in range (len(ivory_filesearch_key)):
+			for c in range (len(ivory_for_for)):
+				if inputer.find(ivory_filesearch_key[fileb]+ivory_for_for[c])>-1:
+					print("My favorite " + ivory_for_for[c] + " is " + ivory_file[ivory_for_for[c]] + ", " + name)
+					break
+		for num in range (len(definitionvalues)):
+			if inputer.find(definitionvalues[num])>-1:
+				abc=inputer.find(definitionvalues[num])+len(definitionvalues[num])
+				for fnum in range(abc, len(inputer)):
+					definedstringjoin=definedstringjoin+inputer[fnum]
 			#print(definedstringjoin)
-				if int(abc)+len(definedstringjoin)==len(inputer):
-					print(dictionary.meaning(definedstringjoin))
-					abc=0
-					definedstringjoin=""
+					if int(abc)+len(definedstringjoin)==len(inputer):
+						print(dictionary.meaning(definedstringjoin) + ", " + name)
+						abc=0
+						definedstringjoin=""
 	inputer=input("A: ")
 	run()
-				
+name=inputer
+askingforname=False
+run()
+print("Hello, " + name)				
 		#print (abc)
 		#print (input.find(definitionvalues))
 #print (dictionary.meaning())		
 #if input.find("hello")>-1:
-url="https://www.google.com/?gws_rd=ssl#q="+inputer
-print ("Hello", name)
-print (url)
-inputer=input("A: ")
-run()
+
 #r=duckduckgo.query('mars')
 #print(r.answer.primary)
 #duckduckgo = urllib.request.urlopen("http://api.duckduckgo.com/?q=dogs+description&format=json&pretty=1");
