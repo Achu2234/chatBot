@@ -8,7 +8,7 @@ import webbrowser
 #from duckduckgo import duckduckgo
 from PyDictionary import PyDictionary
 #duck=duckduckgo();
-parser='htmlparser'
+#parser='htmlparser'
 definedstringjoin=""
 definedwikijoin=""
 name=""
