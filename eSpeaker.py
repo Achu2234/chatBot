@@ -1,7 +1,9 @@
-import subprocess,platform
+import subprocess
+import platform
 # DO NOTE: MAC OSX has not been tested yet
 
 def say(message):
+    print("saying")
     if platform.system().lower() == "windows":
         proc = subprocess.Popen(["eSpeak.exe",message])
     elif platform.system().lower() == "darwin": #Mac OSX will return "darwin"
