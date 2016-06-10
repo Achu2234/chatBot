@@ -1,5 +1,5 @@
 #basics
-v> hello == say "hi"
+c> hello == say "hi"
 c> batman == say "batman is cool."
 c> bow tie == say "bow ties are cool"
 c> fez == say "fezzes are cool"
