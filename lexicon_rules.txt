@@ -1,0 +1,39 @@
+THIS IS A BASIC IDEA OF THE FORMATTING OF A LEXICON
+
+the whole thing is based around the == sign, like this:
+<option>> <what you say> = <comand> <args>
+
+---OPTION and WHAT YOU SAY---
+"what you say" will be a phrase to look for, while "option" will be how to look for it
+
+there will be several different options:
+
+
+v - verbatum - you HAVE to say whatever there is, no more, no less:
+
+ex:
+v> hello = say "hi"
+this will only return "hi" if you EXACTLY say hello
+
+
+c - contains - will run the command if what you say contains at least one instance of a term
+
+ex:
+c> hello = say "hi"
+this will return "hi" if you say "hello", "hello, how are you," or "asdfsdgasdhello" since they all contain the phrase "hello"
+
+
+s - starts with - will run the command only if what you say STARTS with the following phrase
+
+ex:
+s> hello = say "hi"
+this will return "hi" if you type in "Hello," "hello, how are you," or "HELLOsdfgasdf," but not "well, hello there," or "asdfasdfghello"
+
+e - ends with - (not finished)
+
+--COMMANDS--
+
+"command" will specify what to do, and each command has different "args" or arguments
+
+
+say - returns a specific string:

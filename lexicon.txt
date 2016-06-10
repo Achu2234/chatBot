@@ -1,0 +1,29 @@
+#basics
+c> hello == say "hi"
+c> batman == say "batman is cool."
+c> bow tie == say "bow ties are cool"
+c> fez == say "fezzes are cool"
+c> life the universe and everything == say "42 is the answer to life, the universe, and everything"
+c> test == say "I think it worked..."
+c> wait == say "Ok"
+c> repetitive == say "sorry, I try my best"
+
+#favorites - what is the bot's favorite things?
+c> favorite car == say "you can never beat a good time-travelling delorean"
+c> favorite music == say "I'll listen to just about anything"
+c> favorite band == say "I'll listen to just about anything"
+c> favorite food == say "I've never really eaten anything, so I can't judge"
+c> favorite color == say "I never really thought about it, but I suppose it would be blue"
+c> favorite == say "I haven't ever really thought about it"
+
+#basic questions about the robot
+c> live == say "I live inside of modern technology"
+c> are you == say "I am a chatbot AI"
+
+#defualt answers to basic questions
+s> what == say "I don't really know"
+s> who == say "I don't know who that would be"
+s> why == say "I am not sure"
+s> where == say "I am not sure where that would be"
+s> when == say "I'm afraid I don't know when that would be"
+s> how == say "I don't really know"

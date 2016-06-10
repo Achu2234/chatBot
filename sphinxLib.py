@@ -60,6 +60,6 @@ def RecordAndDecode(Seconds = 10):
 if __name__ == "__main__":
     for x in range(10):
         recognised = RecordAndDecode()
-        print recognised
+        print(recognised)
         cm = 'espeak.exe "'+recognised+'"'
         os.system(cm)

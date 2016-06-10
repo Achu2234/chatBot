@@ -4,7 +4,7 @@ except:
     from tkinter import *
 
 class GUI(Tk):
-    def __init__(self, say, speechInput):
+    def __init__(self, say, speechInput, processRequest): #the GUI object should be created with the say and speechInput as functions
 
         Tk.__init__(self)
 
@@ -32,15 +32,21 @@ class GUI(Tk):
         self.speakButton.pack(side = RIGHT)
         self.espeakprocess = None;
         self.say = say
+        self.processRequest = processRequest;
     def testprint(self):
         message = self.inputBox.get();
-        self.print(str(message))
+        self.messageList.insert(END,"You Said: "+str(message))
+        response = self.processRequest(message);
+        self.print(str(response));
     def print(self,message):
         self.say(message);
-        self.messageList.insert(END,"You Said: "+str(message))
+        self.messageList.insert(END,"I Said: "+str(message))
         self.messageList.see(END)
+
+def defaultProcess(message):
+    return message
 
 if __name__ == "__main__":
     import eSpeaker
-    root = GUI(eSpeaker.say, None);
+    root = GUI(eSpeaker.say, None, defaultProcess);
     root.mainloop();
