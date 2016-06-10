@@ -1,6 +1,7 @@
 #import lexicons
 LEXICON_OPTIONS = open("lexicon_options.txt")
 lexicons = LEXICON_OPTIONS.read();
+print("loding these lexicons: \n"+str(lexicons.replace("use ","")))
 lexicons = lexicons.splitlines()
 lexicon_temp = []
 for lexicon in lexicons:
@@ -9,7 +10,7 @@ for lexicon in lexicons:
         lexicon_file = open(lexicon12);
         lexicon_temp.append(lexicon_file.read())
 lexicons = lexicon_temp
-print("lexicons: "+str(lexicons))
+#print("lexicons: "+str(lexicons))
 
 default_message = "I'm not quite sure what you mean..."; #this is the message shown whenever the answer is not found in a lexicon
 
@@ -63,8 +64,6 @@ def decode(message):
                 isInMessage = findInPhrase(option, phrase, message)
                 command = rule[index1+2:]
                 command = command.strip()
-                print(command)
-                print(isInMessage)
                 if isInMessage:
                     return executeCommand(command)   
     return default_message
