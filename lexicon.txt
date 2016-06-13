@@ -27,3 +27,9 @@ s> why == say "I am not sure"
 s> where == say "I am not sure where that would be"
 s> when == say "I'm afraid I don't know when that would be"
 s> how == say "I don't really know"
+
+#things that don't work
+c> music == say "unfortunately I have not yet aquired music playing functionality yet"
+c> calendar == say "unfortunately, I cannot edit calendars yet."
+c> remind == say "sorry, I do not have reminder functionality yet"
+c> pizza == say "Unfortunately, I cannot order pizza ;D"

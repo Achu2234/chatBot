@@ -25,6 +25,7 @@ class GUI(Tk):
         
         self.inputFrame.pack(fill=X)
         self.inputBox = Entry(self.inputFrame,);
+        self.inputBox.bind("<Return>",lambda e: self.testprint())
         self.inputBox.pack(fill=X, expand=1, side = LEFT)
         self.inputButton = Button(self.inputFrame,width = 5, text = "send", command = self.testprint);
         self.speakButton = Button(self.inputFrame,width = 5, text = "speak");
@@ -40,7 +41,7 @@ class GUI(Tk):
         self.print(str(response));
     def print(self,message):
         self.say(message);
-        self.messageList.insert(END,"I Said: "+str(message))
+        self.messageList.insert(END,"           I Said: "+str(message))
         self.messageList.see(END)
 
 def defaultProcess(message):

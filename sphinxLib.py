@@ -8,7 +8,7 @@ import os.path as path
 MODELDIR = "pocketsphinx/model"
 DATADIR = "pocketsphinx/test/data"
 
-def decodeSpeech(hmmd,lmdir,dictp,wavfile):
+def decodeSpeech(wavfile):
     import pocketsphinx as ps
     import sphinxbase
     configr = ps.Decoder.default_config()
@@ -54,12 +54,12 @@ def RecordAndDecode(Seconds = 10):
     wf.writeframes(b''.join(frames))
     wf.close()
     wavfile = fn
-    recognised = decodeSpeech(hmdir,lmd,dictd,wavfile)
+    recognised = decodeSpeech(wavfile)
     return recognised
 
 if __name__ == "__main__":
     for x in range(10):
         recognised = RecordAndDecode()
         print(recognised)
-        cm = 'espeak.exe "'+recognised+'"'
+        cm = 'espeak.exe "'+str(recognised)+'"'
         os.system(cm)

@@ -12,7 +12,21 @@
                 "WaitOnAbnormalExit",
                 "WaitOnNormalExit",
                 "RedirectOutput"
+            ],
+        },
+        {
+            "name": "run MAIN.py",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": true,
+            "program": "${workspaceRoot}/MAIN.py",
+            "pythonPath": "c:/Windows/py.exe",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
             ]
         }
+        
     ]
 }

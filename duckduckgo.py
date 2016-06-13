@@ -29,3 +29,4 @@ if __name__ == "__main__":
     elif result['Type'] == 'E':
         print("this is a bang redirect, essentially linking to the search function of another website");
 
+
