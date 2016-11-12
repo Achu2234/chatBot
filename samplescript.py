@@ -2,11 +2,11 @@
 import urllib
 import json
 import wikipedia
-import urllib.request
-import request1
+#import urllib.request
+#import request1
 import webbrowser
 #from duckduckgo import duckduckgo
-from PyDictionary import PyDictionary
+#from PyDictionary import PyDictionary
 #duck=duckduckgo();
 #parser='htmlparser'
 definedstringjoin=""
@@ -18,12 +18,12 @@ wikipediasearchvalues=["search for ", "wiki ", "wikepedia ", "what is an ", "wha
 ivory_filesearch_key=["What is your","what is your favorite", "what is your all-time", "what is your favorite"]
 ivory_file={'name': 'Ivory', 'age': '15', 'color': 'orange', 'eye color': 'blue', 'movie': 'The Internship', 'book': 'Harry Potter Book Six', 'band': 'Casting Crowns', 'Song': 'Die a Happy Man', 'food': 'fried rice'}
 ivory_for_for=['name', 'age', 'color', 'eye color', 'movie', 'book', 'band', 'song', 'food']
-dictionary=PyDictionary()
+#dictionary=PyDictionary()
 
 #soup=dictionary.PyDictionary(html, 'htmlparser')
 #print (dictionary.meaning("indentation"))
 print ("Hello, I am Ivory. What is your name?")
-inputer=input("A: ")
+inputer=raw_input("A: ")
 
 def run():
 	global ivory_file
@@ -74,7 +74,7 @@ def run():
 						print(dictionary.meaning(definedstringjoin) + ", " + name)
 						abc=0
 						definedstringjoin=""
-	inputer=input("A: ")
+	inputer=raw_input("A: ")
 	run()
 name=inputer
 askingforname=False
