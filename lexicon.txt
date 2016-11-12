@@ -29,10 +29,10 @@ s> when == say "I'm afraid I don't know when that would be"
 s> how == say "I don't really know"
 
 #triggers for wikipedia search
-w> wiki== wiki
-w> wikipedia== wiki "I am working on wikipedia functionality"
-w> what is== wiki "I am working on wikipedia functionality"
-w> define== wiki "I am working on wikipedia functionality"
+s> wikipedia == wiki "I am working on wikipedia functionality"
+s> wiki == wiki 
+s> what is == wiki "I am working on wikipedia functionality"
+s> define == wiki "I am working on wikipedia functionality"
 
 #things that don't work
 c> music == say "unfortunately I have not yet aquired music playing functionality yet"

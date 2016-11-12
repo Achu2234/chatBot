@@ -2,13 +2,10 @@ try:
     from Tkinter import *
 except:
     from tkinter import *
-<<<<<<< HEAD
 import sys
 import os
-=======
 import threading
 
->>>>>>> b4755313df36ea28839d073dfa4f6f426424bdac
 class GUI(Tk):
     def __init__(self, say, speechInput, processRequest): #the GUI object should be created with the say and speechInput as functions
 
@@ -39,27 +36,15 @@ class GUI(Tk):
         self.speakButton.pack(side = RIGHT)
         self.espeakprocess = None
         self.say = say
-<<<<<<< HEAD
-        self.processRequest = processRequest;
-    
-    def printy(self, message):
-        self.say(message);
-        self.messageList.insert(END,"           "+str(message))
-        self.messageList.see(END)
-    def testprint(self):
-        message = self.inputBox.get();
-        self.messageList.insert(END, str(message))
-        response = self.processRequest(message);
-        self.printy(str(response));
-=======
+
         self.processRequest = processRequest
         self.speechInput = speechInput
     def testprint(self):
         message = self.inputBox.get()
         self.messageList.insert(END,"You Said: "+str(message))
         response = self.processRequest(message)
-        self.print(str(response))
-    def print(self,message):
+        self.printStatement(str(response))
+    def printStatement(self,message):
         self.attributes('-topmost', 1)
         self.say(message)
         self.messageList.insert(END,"           I Said: "+str(message))
@@ -75,9 +60,8 @@ class GUI(Tk):
             response = self.processRequest(message)
         except AttributeError:
             response = "sorry, there was an error with speech recognition. Please try again!"
-        self.print(str(response))
+        self.printStatement(str(response))
         self.speakButton.config(background = "SystemButtonFace")
->>>>>>> b4755313df36ea28839d073dfa4f6f426424bdac
 
 def defaultProcess(message):
     return message
