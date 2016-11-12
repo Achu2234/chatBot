@@ -16,7 +16,7 @@ def decodeSpeech(wavfile):
     configr.set_string('-lm', path.join(MODELDIR, 'en-us/en-us.lm.bin'))
     configr.set_string('-dict', path.join(MODELDIR, 'en-us/cmudict-en-us.dict'))
     speechRec = ps.Decoder(configr)
-    wavFile = file(wavfile,'rb')
+    wavFile = open(wavfile,'rb')
     wavFile.seek(44)
     speechRec.start_utt()
     while True:
@@ -35,7 +35,7 @@ CHANNELS = 1
 RATE = 16000
 
 def RecordAndDecode(Seconds = 10):
-    fn = "o"+str(x)+".wav"
+    fn = "oLast.wav"
     p = pyaudio.PyAudio()
     stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
     print("* recording")
@@ -63,3 +63,4 @@ if __name__ == "__main__":
         print(recognised)
         cm = 'espeak.exe "'+str(recognised)+'"'
         os.system(cm)
+
